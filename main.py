@@ -9,7 +9,7 @@ ROUNDS = 1
 # max_iterations 为最大迭代次数
 MAX_ITERATIONS = 10000000
 # test_number 为一个样本测试多少次
-TEST_NUMBER = 10
+TEST_NUMBER = 30
 # n 为样本数
 N = 20
 # DEBUG 为是否输出中间内容
@@ -171,21 +171,21 @@ def run():
     # for val in np.arange(0.1, 0.2, 0.01):
     #     x = np.append(x, val)
     #     y = np.append(y, test(n, val))
-
-    l = 0.19
-    r = 0.21
-    while abs(r - l) > 0.001:
-        start = time.time()
-        mid = (l + r) / 2
-        res = test(n, mid)
-        print(res)
-        if res >= 0.75:
-            r = mid
-        else:
-            l = mid + 0.001
-        end = time.time()
-        print("耗时", end - start, " 目前测试", mid)
-    print(l)
+    test(n, 0.183)
+    # l = 0.1828
+    # r = 0.1832
+    # while abs(r - l) > 0.0001:
+    #     start = time.time()
+    #     mid = (l + r) / 2
+    #     res = test(n, mid)
+    #     print(res)
+    #     if res >= 0.75:
+    #         r = mid
+    #     else:
+    #         l = mid + 0.001
+    #     end = time.time()
+    #     print("耗时", end - start, " 目前测试", mid)
+    # print(l)
 
     # 测试A为0.3，方差逐渐变大后的概率
     # for val in np.arange(0, 0.2, 0.003):
